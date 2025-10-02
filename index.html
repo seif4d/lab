@@ -3,44 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProLaptops | لابتوبات احترافية بأفضل الأسعار</title>
+    <title>متجر ProLaptops - عروض حصرية</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts for modern Arabic font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ------------------------- */
-        /* --- CSS Variables & Global Styles --- */
+        /* --- Global Styles & Variables --- */
         /* ------------------------- */
         :root {
-            /* Dark Mode (Default) */
-            --bg-color: #0d1117;
-            --card-bg: rgba(30, 30, 40, 0.6);
-            --header-bg: rgba(13, 17, 23, 0.7);
-            --text-color: #e6edf3;
-            --text-muted: #8b949e;
-            --accent-glow: rgba(88, 166, 255, 0.5);
-            --card-border: rgba(255, 255, 255, 0.1);
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --primary-gradient: linear-gradient(90deg, #ff416c 0%, #ff4b2b 100%);
+            --secondary-gradient: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
             --shadow-color: rgba(0, 0, 0, 0.5);
-            --primary-gradient: linear-gradient(90deg, #58a6ff 0%, #3081f7 100%);
-            --secondary-gradient: linear-gradient(90deg, #f778ba 0%, #ea4aaa 100%);
-        }
-
-        body.light-mode {
-            /* Light Mode */
-            --bg-color: #f0f2f5;
-            --card-bg: rgba(255, 255, 255, 0.7);
-            --header-bg: rgba(255, 255, 255, 0.7);
-            --text-color: #1c1e21;
-            --text-muted: #606770;
-            --accent-glow: rgba(0, 110, 255, 0.3);
-            --card-border: rgba(0, 0, 0, 0.1);
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --card-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -55,31 +37,9 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        
-        /* Animated Aurora Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: 
-                radial-gradient(circle at 15% 25%, #58a6ff44, transparent 40%),
-                radial-gradient(circle at 85% 75%, #f778ba33, transparent 40%);
-            z-index: -1;
-            animation: moveAurora 20s infinite alternate linear;
-        }
-
-        @keyframes moveAurora {
-            from { transform: rotate(0deg) scale(1.2); }
-            to { transform: rotate(360deg) scale(1.2); }
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
         .container {
@@ -92,15 +52,13 @@
         /* --- Header & Navigation --- */
         /* ------------------------- */
         .main-header {
-            background-color: var(--header-bg);
+            background-color: rgba(30, 30, 30, 0.8);
             padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            z-index: 100;
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--card-border);
-            transition: background-color 0.3s ease;
         }
 
         .main-header .container {
@@ -108,14 +66,11 @@
             justify-content: space-between;
             align-items: center;
         }
-        
-        .header-left { display: flex; align-items: center; gap: 2rem; }
-        .header-right { display: flex; align-items: center; gap: 1rem; }
 
         .logo {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--text-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
             text-decoration: none;
         }
         .logo span {
@@ -124,28 +79,18 @@
             background-clip: text;
             color: transparent;
         }
-        .main-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
 
         .main-nav a {
             color: var(--text-muted);
             text-decoration: none;
+            margin: 0 15px;
             font-weight: 600;
             transition: color 0.3s ease;
-            padding: 5px 0;
-            position: relative;
         }
-        .main-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: width 0.3s ease;
+
+        .main-nav a:hover {
+            color: var(--text-light);
         }
-        .main-nav a:hover { color: var(--text-color); }
-        .main-nav a:hover::after { width: 100%; }
 
         .cta-button {
             background: var(--primary-gradient);
@@ -154,69 +99,14 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 4px 15px var(--accent-glow);
+            box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            white-space: nowrap;
         }
+
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px var(--accent-glow);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 75, 43, 0.6);
         }
-
-        #theme-toggle {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-muted);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-        #theme-toggle:hover {
-            color: var(--text-color);
-            border-color: var(--text-color);
-        }
-
-        /* ------------------------- */
-        /* --- Hero Section --- */
-        /* ------------------------- */
-        .hero {
-            text-align: center;
-            padding: 120px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            max-width: 800px;
-        }
-
-        .hero h1 span {
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-        .hero .cta-button { font-size: 1.1rem; padding: 15px 40px;}
 
         /* ------------------------- */
         /* --- Sections & Titles --- */
@@ -227,8 +117,8 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 60px;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
             font-weight: 700;
         }
 
@@ -237,474 +127,267 @@
         /* ------------------------- */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
         .product-card {
             background-color: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 15px;
             padding: 1.5rem;
+            box-shadow: 0 10px 30px var(--shadow-color);
             border: 1px solid var(--card-border);
             display: flex;
             flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            position: relative; /* For positioning the product code */
             
+            /* Animation initial state */
             opacity: 0;
-            transform: scale(0.95) translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
         }
 
         .product-card.visible {
             opacity: 1;
-            transform: scale(1) translateY(0);
+            transform: translateY(0);
         }
         
-        .product-card::before {
-            content: '';
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+        
+        .product-code {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--accent-glow), transparent 40%);
-            border-radius: inherit;
-            opacity: 0;
-            transition: opacity 0.5s;
-            z-index: -1;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
         }
-        
-        .product-card:hover::before {
-            opacity: 1;
-        }
-        
+
         .product-card img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
             margin-bottom: 1.5rem;
+            background-color: #333; /* Placeholder background */
         }
         
         .product-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
-            font-weight: 700;
-            min-height: 50px; 
+            font-weight: 600;
+            min-height: 50px; /* To align cards heights */
         }
         
         .specs {
             list-style: none;
             margin-bottom: 1.5rem;
             color: var(--text-muted);
-            flex-grow: 1;
+            flex-grow: 1; /* Pushes price & button to the bottom */
         }
         
         .specs li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 0.5rem;
         }
-        .specs i {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            width: 20px;
-            text-align: center;
+
+        .specs li strong {
+            color: var(--text-light);
+            margin-left: 5px;
         }
         
         .price-order-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: auto;
+            margin-top: auto; /* Pushes itself to the bottom */
         }
         
         .price {
-            font-size: 2rem;
-            font-weight: 900;
+            font-size: 1.8rem;
+            font-weight: 700;
             background: var(--secondary-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .price::before { content: 'ج.م '; font-size: 1rem; color: var(--text-muted); }
 
         .order-btn {
             background: var(--secondary-gradient);
             color: white;
-            padding: 10px 24px;
+            padding: 8px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease;
         }
         
         .order-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(234, 74, 170, 0.4);
         }
 
-        .special-feature {
-            position: absolute;
-            top: 20px;
-            left: -35px;
-            background: var(--primary-gradient);
-            color: white;
-            padding: 5px 30px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            transform: rotate(-45deg);
-            box-shadow: 0 4px 10px rgba(88, 166, 255, 0.4);
-        }
-        
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--card-border);
-            margin-top: 60px;
-        }
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover { color: var(--text-color); }
-
+        /* ------------------------- */
         /* --- Responsive Design --- */
-        @media (max-width: 992px) {
-            .main-header .container { flex-direction: column; gap: 1rem; }
-            .header-left { flex-direction: column; gap: 1rem; }
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { font-size: 1.1rem; }
-        }
+        /* ------------------------- */
         @media (max-width: 768px) {
-             .product-grid { grid-template-columns: 1fr; }
-             .section-title { font-size: 2.2rem; }
+            .main-header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .main-nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+             .main-nav a {
+                margin: 0;
+             }
+
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ======================== HEADER ======================== -->
+    <!-- ======================== -->
+    <!--          HEADER          -->
+    <!-- ======================== -->
     <header class="main-header">
         <div class="container">
-            <div class="header-left">
-                <a href="#" class="logo">Pro<span>Laptops</span></a>
-                <nav class="main-nav">
-                    <a href="#workstation">Workstation</a>
-                    <a href="#touch">Touch</a>
-                    <a href="#amd">AMD</a>
-                    <a href="#intel">Intel</a>
-                </nav>
-            </div>
-            <div class="header-right">
-                <button id="theme-toggle"><i class="fas fa-sun"></i></button>
-                <a href="#contact" class="cta-button">تواصل معنا</a>
-            </div>
+            <a href="#" class="logo"><span>Pro</span>Laptops</a>
+            <nav class="main-nav">
+                <a href="#workstation">Workstation</a>
+                <a href="#touch">أجهزة لمس</a>
+                <a href="#amd">أجهزة AMD</a>
+                <a href="#intel">أجهزة Intel</a>
+            </nav>
+            <a href="#contact" class="cta-button">تواصل معنا</a>
         </div>
     </header>
 
     <main>
-        <!-- ======================== HERO SECTION ======================== -->
-        <section class="hero">
-            <div class="container">
-                <h1>قوة الأداء بين يديك، <span>بأفضل الأسعار</span></h1>
-                <p>اكتشف مجموعتنا المختارة من أقوى أجهزة اللابتوب الاحترافية التي تلبي كل احتياجاتك، من التصميم والجرافيكس إلى الأعمال اليومية.</p>
-                <a href="#workstation" class="cta-button">استعرض الأجهزة الآن <i class="fas fa-arrow-down"></i></a>
-            </div>
-        </section>
 
-        <!-- ======================== Workstation Section ======================== -->
+        <!-- ======================== -->
+        <!--      Workstation Section -->
+        <!-- ======================== -->
         <section id="workstation">
             <div class="container">
-                <h2 class="section-title">🔥 أجهزة Workstation</h2>
+                <h2 class="section-title">🔥 قسم أجهزة Workstation</h2>
                 <div class="product-grid">
-                    <!-- Cards will be populated here from your data -->
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/58a6ff?text=HP+Zbook" alt="HP Zbook Power G8">
-                        <h3>HP Zbook Power G8</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-11TH</li>
-                            <li><i class="fas fa-memory"></i> 32 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> NVIDIA T1200 4G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">27700</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/58a6ff?text=Dell+Precision" alt="Dell Precision 7560">
-                        <h3>Dell Precision 7560</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-11TH</li>
-                            <li><i class="fas fa-memory"></i> 32 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> NVIDIA T1200 4GB</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">26700</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/58a6ff?text=HP+Zbook" alt="HP Zbook Studio 15 G7">
-                        <h3>HP Zbook Studio 15 G7</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-10TH</li>
-                            <li><i class="fas fa-memory"></i> 32 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> T1000 4G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">23450</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <div class="special-feature">شاشة 4K لمس</div>
-                        <img src="https://placehold.co/400x300/1e1e1e/58a6ff?text=Dell+Precision" alt="Dell Precision 5540">
-                        <h3>Dell Precision 5540</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-9TH</li>
-                            <li><i class="fas fa-memory"></i> 16 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> NVIDIA T1000 4G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">22200</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/58a6ff?text=Dell+Precision" alt="Dell Precision 7550">
-                        <h3>Dell Precision 7550</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-10TH</li>
-                            <li><i class="fas fa-memory"></i> 16 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> T1000 4G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">23100</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/58a6ff?text=HP+Zbook" alt="HP Zbook 15 G6">
-                        <h3>HP Zbook 15 G6</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-9TH</li>
-                            <li><i class="fas fa-memory"></i> 32 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> NVIDIA T1000 4G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">21200</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                     <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/58a6ff?text=Dell+Latitude" alt="Dell Latitude 5501">
-                        <h3>Dell Latitude 5501</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-9TH</li>
-                            <li><i class="fas fa-memory"></i> 16 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> GeForce Mx150</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">15350</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
+                    <!-- Cards will be populated from your data -->
+                    <div class="product-card"> <span class="product-code">11-3-57</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+Zbook+Power+G8" alt="HP Zbook Power G8"> <h3>HP Zbook Power G8</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-11TH</li> <li><strong>الرام:</strong> 32 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV T1200 4G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">27,700</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-3-63</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+precision+7560" alt="DELL precision 7560"> <h3>DELL precision 7560</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-11TH</li> <li><strong>الرام:</strong> 31 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV T1200 4GB</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">26,700</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-3-55</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+Zbook+Studio+15+G7" alt="HP Zbook Studio 15 G7"> <h3>HP Zbook Studio 15 G7</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-10TH</li> <li><strong>الرام:</strong> 32 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> T1000 4G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">23,450</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-3-60</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+PRECISION+5540" alt="DELL PRECISION 5540"> <h3>DELL PRECISION 5540</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-9TH</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV T1000 4G</li> <li><strong>الشاشة:</strong> 15.6" TOUCH 4K</li> </ul> <div class="price-order-wrapper"> <span class="price">22,200</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-3-66</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Precision+7550" alt="DELL Precision 7550"> <h3>DELL Precision 7550</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-10TH</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> T1000 4G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">23,100</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-3-62</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+Zbook+15+G6" alt="HP Zbook 15 G6"> <h3>HP Zbook 15 G6</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-9TH</li> <li><strong>الرام:</strong> 32 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV T1000 4G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">21,200</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-3-63</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+Zbook+15+G5" alt="HP Zbook 15 G5"> <h3>HP Zbook 15 G5</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV P1000 4G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">19,350</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-3-150</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+ZBOOK+Firefly+14+G7" alt="HP ZBOOK Firefly 14 G7"> <h3>HP ZBOOK Firefly 14 G7</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-10th</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV P520 4G</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">18,950</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-3-49</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+ZBOOK+15+G3" alt="HP ZBOOK 15 G3"> <h3>HP ZBOOK 15 G3</h3> <ul class="specs"> <li><strong>المعالج:</strong> XEON E3-1505M</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV M1000M 4G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">14,700</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-3-65</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+ZBOOK+15+U+g6" alt="HP ZBOOK 15 U g6"> <h3>HP ZBOOK 15 U g6</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> AMD Pro WX 3200 4g</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">21,200</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-2-33</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+latitude+5501" alt="DELL latitude 5501"> <h3>DELL latitude 5501</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-9TH</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> N GeForce Mx150</li> <li><strong>الشاشة:</strong> 15.6" TOUCH</li> </ul> <div class="price-order-wrapper"> <span class="price">15,350</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-3-35</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+PRECISION+7510" alt="DELL PRECISION 7510"> <h3>DELL PRECISION 7510</h3> <ul class="specs"> <li><strong>المعالج:</strong> XEON E3 1505M V5</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV M1200 4G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">13,050</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-3-33</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+PRECISION+7510" alt="DELL PRECISION 7510"> <h3>DELL PRECISION 7510</h3> <ul class="specs"> <li><strong>المعالج:</strong> XEON E3 1505M V5</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> NV M1200 2G</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">11,550</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-3-65</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+PRECISION+7520" alt="DELL PRECISION 7520"> <h3>DELL PRECISION 7520</h3> <ul class="specs"> <li><strong>المعالج:</strong> XEON E3-1505M</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 512 GB SSD</li> <li><strong>كرت الشاشة:</strong> AMD PRO WX 4130 2GB</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">11,500</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
                 </div>
             </div>
         </section>
 
-        <!-- ======================== Touch Section ======================== -->
+        <!-- ======================== -->
+        <!--        Touch Section     -->
+        <!-- ======================== -->
         <section id="touch">
             <div class="container">
-                <h2 class="section-title">🖐️ أجهزة تدعم اللمس (Touch)</h2>
+                <h2 class="section-title">🖐️ قسم الأجهزة التي تدعم اللمس (TOUCH)</h2>
                 <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/f778ba?text=Dell+x360" alt="Dell Latitude 5310">
-                        <h3>Dell Latitude 5310 x360</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i5-10TH</li>
-                            <li><i class="fas fa-memory"></i> 16 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-desktop"></i> شاشة 13 بوصة لمس</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">10900</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/f778ba?text=Dell+Tablet" alt="Dell Latitude 7200">
-                        <h3>Dell Latitude 7200 2-in-1</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-8TH</li>
-                            <li><i class="fas fa-memory"></i> 16 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-tablet-alt"></i> شاشة 12 بوصة تابلت</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">10650</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/f778ba?text=Dell+x360" alt="Dell Latitude 5300">
-                        <h3>Dell Latitude 5300 x360</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-8TH</li>
-                            <li><i class="fas fa-memory"></i> 8 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-desktop"></i> شاشة 13 بوصة لمس</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">10800</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
+                    <div class="product-card"> <span class="product-code">10-1-182</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=Dell+Latitude+5310" alt="Dell Latitude 5310"> <h3>Dell Latitude 5310</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-10TH</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 13" x360</li> </ul> <div class="price-order-wrapper"> <span class="price">10,900</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-150</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+7200" alt="DELL Latitude 7200"> <h3>DELL Latitude 7200</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 12" 2*1 TABLET</li> </ul> <div class="price-order-wrapper"> <span class="price">10,650</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-223</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+5300" alt="DELL Latitude 5300"> <h3>DELL Latitude 5300</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 13" x360</li> </ul> <div class="price-order-wrapper"> <span class="price">10,800</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
                 </div>
             </div>
         </section>
 
-        <!-- ======================== AMD Section ======================== -->
+        <!-- ======================== -->
+        <!--        AMD Section       -->
+        <!-- ======================== -->
         <section id="amd">
             <div class="container">
-                <h2 class="section-title">🚀 أجهزة بمعالج AMD</h2>
+                <h2 class="section-title">🚀 قسم V (أجهزة بمعالج AMD)</h2>
                 <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/ff4b2b?text=HP+Ryzen" alt="HP 845 G8">
-                        <h3>HP 845 G8</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Ryzen 5 PRO</li>
-                            <li><i class="fas fa-memory"></i> 16 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> AMD 2G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">12100</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/ff4b2b?text=HP+Zbook" alt="HP Zbook 14 G5">
-                        <h3>HP Zbook 14 G5</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-8TH</li>
-                            <li><i class="fas fa-memory"></i> 8 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> AMD Pro WX 3100 2G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">11400</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/ff4b2b?text=Dell+AMD" alt="Dell Latitude E6440">
-                        <h3>Dell Latitude E6440</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i5-4TH</li>
-                            <li><i class="fas fa-memory"></i> 4 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> AMD 8690M 2G</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">5200</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
+                    <div class="product-card"> <span class="product-code">11-1-107</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+845+G8" alt="HP 845 G8"> <h3>HP 845 G8</h3> <ul class="specs"> <li><strong>المعالج:</strong> RYZEN 5 PRO</li> <li><strong>الرام:</strong> 16 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> AMD 2G</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">12,100</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-3-61</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+Zbook+14+G5" alt="HP Zbook 14 G5"> <h3>HP Zbook 14 G5</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> AMD Pro WX 3100 2G</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">11,400</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-46</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+LATITUDE+E6440" alt="DELL LATITUDE E6440"> <h3>DELL LATITUDE E6440</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-4TH</li> <li><strong>الرام:</strong> 4 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> AMD 8690M 2G</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">5,200</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
                 </div>
             </div>
         </section>
-        
-        <!-- ======================== Intel Section ======================== -->
+
+        <!-- ======================== -->
+        <!--       Intel Section      -->
+        <!-- ======================== -->
         <section id="intel">
             <div class="container">
-                <h2 class="section-title">⚙️ أجهزة بمعالج Intel</h2>
+                <h2 class="section-title">⚡ قسم أجهزة بمعالج Intel</h2>
                 <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/3081f7?text=Dell+Latitude" alt="Dell Latitude 5520">
-                        <h3>Dell Latitude 5520</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i5-11TH</li>
-                            <li><i class="fas fa-memory"></i> 8 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> Intel Graphics</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">12800</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/3081f7?text=Dell+Latitude" alt="Dell Latitude 5410">
-                        <h3>Dell Latitude 5410</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i5-10TH</li>
-                            <li><i class="fas fa-memory"></i> 8 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> Intel Graphics</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">9180</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/3081f7?text=HP+Elitebook" alt="HP Elitebook 830 G5">
-                        <h3>HP Elitebook 830 G5</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i5-7TH</li>
-                            <li><i class="fas fa-memory"></i> 8 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> Intel Graphics</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">8000</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
-                     <div class="product-card">
-                        <img src="https://placehold.co/400x300/1e1e1e/3081f7?text=Dell+Latitude" alt="Dell Latitude E7490">
-                        <h3>Dell Latitude E7490</h3>
-                        <ul class="specs">
-                            <li><i class="fas fa-microchip"></i> Core i7-8TH</li>
-                            <li><i class="fas fa-memory"></i> 8 GB RAM</li>
-                            <li><i class="fas fa-hdd"></i> 256 GB Storage</li>
-                            <li><i class="fas fa-gamepad"></i> Intel Graphics</li>
-                        </ul>
-                        <div class="price-order-wrapper"><span class="price">7800</span><a href="#" class="order-btn">اطلب الآن</a></div>
-                    </div>
+                    <div class="product-card"> <span class="product-code">10-1-217</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+5520" alt="DELL Latitude 5520"> <h3>DELL Latitude 5520</h3> <ul class="specs"> <li><strong>المعالج:</strong> i5-11TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 15.6"</li> </ul> <div class="price-order-wrapper"> <span class="price">12,800</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-220</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+5410" alt="DELL Latitude 5410"> <h3>DELL Latitude 5410</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-10TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">9,180</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">11-13-01</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=HP+ELITEBOOK+830+G5" alt="HP ELITEBOOK 830 G5"> <h3>HP ELITEBOOK 830 G5</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-7TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 13"</li> </ul> <div class="price-order-wrapper"> <span class="price">8,000</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-59</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+E5400" alt="DELL Latitude E5400"> <h3>DELL Latitude E5400</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">8,350</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-12-04</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+E7280" alt="DELL Latitude E7280"> <h3>DELL Latitude E7280</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-6TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 12"</li> </ul> <div class="price-order-wrapper"> <span class="price">7,400</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-32</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+E5490" alt="DELL Latitude E5490"> <h3>DELL Latitude E5490</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">7,950</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-2-104</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+E7490" alt="DELL Latitude E7490"> <h3>DELL Latitude E7490</h3> <ul class="specs"> <li><strong>المعالج:</strong> I7-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">7,800</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-198</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+E5400" alt="DELL Latitude E5400"> <h3>DELL Latitude E5400</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">7,200</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-2-84</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+E7400" alt="DELL Latitude E7400"> <h3>DELL Latitude E7400</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">7,300</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-50</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+E3480" alt="DELL Latitude E3480"> <h3>DELL Latitude E3480</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-7TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 14"</li> </ul> <div class="price-order-wrapper"> <span class="price">6,100</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-221</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+Latitude+3310" alt="DELL Latitude 3310"> <h3>DELL Latitude 3310</h3> <ul class="specs"> <li><strong>المعالج:</strong> I3-8TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 13"</li> </ul> <div class="price-order-wrapper"> <span class="price">5,900</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
+                    <div class="product-card"> <span class="product-code">10-1-123</span> <img src="https://placehold.co/400x300/1e1e1e/f5f5f5?text=DELL+LATITUDE+E7240" alt="DELL LATITUDE E7240"> <h3>DELL LATITUDE E7240</h3> <ul class="specs"> <li><strong>المعالج:</strong> I5-4TH</li> <li><strong>الرام:</strong> 8 GB</li> <li><strong>التخزين:</strong> 256 GB SSD</li> <li><strong>كرت الشاشة:</strong> INTEL</li> <li><strong>الشاشة:</strong> 12"</li> </ul> <div class="price-order-wrapper"> <span class="price">4,300</span> <a href="#" class="order-btn">اطلب الآن</a> </div> </div>
                 </div>
             </div>
         </section>
+
     </main>
-    
-    <!-- ======================== FOOTER ======================== -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p>&copy; 2024 ProLaptops. كل الحقوق محفوظة.</p>
-        </div>
-    </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Staggered Animation on Scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const parentGrid = entry.target.parentElement;
-                const siblings = Array.from(parentGrid.children);
-                const index = siblings.indexOf(entry.target);
-                entry.target.style.transitionDelay = `${index * 100}ms`;
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.product-card').forEach(el => observer.observe(el));
+    // JavaScript for fade-in animation on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Select all the elements we want to animate
+        const cards = document.querySelectorAll('.product-card');
 
-    // Card Hover Glow Effect
-    document.querySelectorAll('.product-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
+        // 2. Set up the Intersection Observer
+        const observerOptions = {
+            root: null, // observes intersections relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // If the element is intersecting (visible)
+                if (entry.isIntersecting) {
+                    // Add the 'visible' class to trigger the animation
+                    entry.target.classList.add('visible');
+                    // Stop observing the element once it's visible to save resources
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // 3. Observe each card
+        cards.forEach(card => {
+            observer.observe(card);
         });
     });
-
-    // Light/Dark Mode Toggle
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
-    const themeIcon = themeToggleBtn.querySelector('i');
-    
-    const applyTheme = (theme) => {
-        body.classList.toggle('light-mode', theme === 'light');
-        themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-    };
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    applyTheme(savedTheme);
-
-    themeToggleBtn.addEventListener('click', () => {
-        let newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
-        applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
-});
 </script>
 
 </body>
